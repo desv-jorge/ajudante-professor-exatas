@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ajudante do Professor de Exatas</title>
+    
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/screens.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="tablet-container">
+        
+        <!-- TELA PRINCIPAL -->
+        <section id="main-screen" class="screen active">
+            <header class="header-compact">
+                <div class="avatar">
+                    <img src="https://www.physio-pedia.com/images/6/62/Albert_Einstein_teaching.gif" alt="Einstein">
+                </div>
+                <div class="header-text">
+                    <h1>Ajudante do Professor</h1>
+                    <p>Mergulhe no mundo das Exatas</p>
+                </div>
+            </header>
+            
+            <main class="main-graphic">
+                <img src="https://media.tenor.com/cHVSSkz2qvUAAAAM/education-students.gif" alt="Students Learning">
+            </main>
+
+            <footer class="screen-footer">
+                <button class="btn btn-primary" onclick="app.navigate('choice-screen')">
+                    Iniciar Experiências <span>→</span>
+                </button>
+            </footer>
+        </section>
+
+        <!-- TELA DE ESCOLHA -->
+        <section id="choice-screen" class="screen hidden">
+            <header class="header-compact">
+                <div class="avatar">
+                    <img src="https://www.physio-pedia.com/images/6/62/Albert_Einstein_teaching.gif" alt="Einstein">
+                </div>
+                <div class="header-text">
+                    <h1>Escolha a Matéria</h1>
+                    <p>Selecione um simulador abaixo</p>
+                </div>
+            </header>
+
+            <main class="grid-cards" id="subjects-container">
+                <!-- Injetado via JS -->
+            </main>
+            
+            <footer class="screen-footer">
+                <button class="btn btn-secondary" onclick="app.navigate('main-screen')">Voltar</button>
+            </footer>
+        </section>
+
+        <!-- TELA DE SIMULADORES -->
+        <section id="simulator-screen" class="screen hidden">
+            <header class="header-compact simulator-nav">
+                <button class="btn btn-icon" onclick="app.navigate('choice-screen')">
+                    ← Voltar
+                </button>
+                <h2 id="simulator-title">Simulador</h2>
+            </header>
+            
+            <main class="webview-container">
+                <iframe id="simulator-webview" src="" frameborder="0" allowfullscreen></iframe>
+            </main>
+        </section>
+
+    </div>
+
+    <!-- Modular JS -->
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

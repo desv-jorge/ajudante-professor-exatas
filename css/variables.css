@@ -1,0 +1,42 @@
+:root {
+    /* Color Palette */
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --physics: #ec4899;
+    --chemistry: #06b6d4;
+    --math: #8b5cf6;
+    
+    --bg-dark: #0f172a;
+    --bg-tablet: rgba(30, 41, 59, 0.85);
+    --bg-card: rgba(255, 255, 255, 0.05);
+    
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Effects */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --transition: all 0.3s ease;
+    
+    /* Layout */
+    --tablet-width: 1024px;
+    --tablet-height: 768px; /* Standard landscape tablet */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1e1b4b 100%);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Strict 100vh to avoid body scroll */
+    overflow: hidden;
+}

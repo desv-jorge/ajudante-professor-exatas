@@ -1,0 +1,67 @@
+/* Tablet Container Structure */
+#tablet-container {
+    width: 100%;
+    max-width: var(--tablet-width);
+    height: 100vh; /* Takes full height on mobile */
+    max-height: var(--tablet-height);
+    background: var(--bg-tablet);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Screen Management */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 32px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.98);
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.screen.hidden {
+    display: none; /* Only hidden fully after animation via JS if needed, but opacity handles it */
+}
+
+/* Layout Utilities */
+.screen-footer {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #tablet-container {
+        border-radius: 0;
+        border: none;
+        max-height: 100vh; /* Fill entire screen on anything smaller than a tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 16px;
+    }
+}

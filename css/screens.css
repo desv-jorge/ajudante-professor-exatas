@@ -1,0 +1,99 @@
+/* Main Screen Graphic */
+.main-graphic {
+    flex: 1; /* Takes available space */
+    min-height: 0; /* Crucial for flex child to shrink properly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.main-graphic img {
+    width: 100%;
+    height: 100%;
+    max-width: 500px; /* Don't get too large on wide screens */
+    object-fit: contain; /* Fit inside without cropping or overflowing */
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Choice Screen Grid */
+.grid-cards {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto; /* Fallback scroll only if screen is absurdly small */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    align-content: start; /* Don't stretch rows vertically */
+    padding-bottom: 16px;
+    
+    /* Custom Scrollbar for the grid if it overflows */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+.grid-cards::-webkit-scrollbar { width: 6px; }
+.grid-cards::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+/* Subject Card */
+.subject-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info h3 { font-size: 1.2rem; margin-bottom: 4px; }
+.card-info p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Subject specific colors */
+.theme-physics { background: var(--physics); }
+.theme-chemistry { background: var(--chemistry); }
+.theme-math { background: var(--math); }
+
+/* Simulator Webview */
+.simulator-nav {
+    margin-bottom: 16px;
+}
+
+.webview-container {
+    flex: 1;
+    min-height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--glass-border);
+}
+
+.webview-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}

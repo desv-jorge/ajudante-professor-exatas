@@ -3,6 +3,7 @@
     width: 100%;
     max-width: var(--tablet-width);
     height: 100vh; /* Takes full height on mobile */
+    height: 100dvh;
     max-height: var(--tablet-height);
     background: var(--bg-tablet);
     backdrop-filter: blur(20px);
@@ -25,7 +26,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 24px 32px;
+    padding: 24px 32px calc(24px + env(safe-area-inset-bottom)) 32px;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
     pointer-events: none;
@@ -57,11 +58,12 @@
         border-radius: 0;
         border: none;
         max-height: 100vh; /* Fill entire screen on anything smaller than a tablet */
+        max-height: 100dvh;
     }
 }
 
 @media (max-width: 480px) {
     .screen {
-        padding: 16px;
+        padding: 16px 16px calc(16px + env(safe-area-inset-bottom)) 16px;
     }
 }

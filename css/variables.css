@@ -38,5 +38,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Strict 100vh to avoid body scroll */
+    height: 100dvh; /* Fix for mobile browser address bar */
     overflow: hidden;
 }
